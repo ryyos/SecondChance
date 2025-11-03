@@ -1,0 +1,4 @@
+ dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+dotnet add package Serilog.Sinks.File
+dotnet add package Serilog.Sinks.Console
+dotnet add package Serilog --version 4.3.0
