@@ -32,6 +32,7 @@ public class Master
 
     public static void Main(string[] args)
     {
+        Console.WriteLine("Halo ini Julian");
         Console.WriteLine(
             File.ReadAllText(pathWelcome)
         );
