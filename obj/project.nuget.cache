@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "srC2p0+NKsU=",
+  "dgSpecHash": "Ih/WA5eGPYA=",
   "success": true,
   "projectFilePath": "D:\\UPH\\Dasar Pemrograman Dpkk\\SecondChance\\SecondChance.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Ryyos\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512",
     "C:\\Users\\Ryyos\\.nuget\\packages\\serilog\\4.3.0\\serilog.4.3.0.nupkg.sha512",
     "C:\\Users\\Ryyos\\.nuget\\packages\\serilog.sinks.console\\6.1.0\\serilog.sinks.console.6.1.0.nupkg.sha512",
     "C:\\Users\\Ryyos\\.nuget\\packages\\serilog.sinks.file\\7.0.0\\serilog.sinks.file.7.0.0.nupkg.sha512"

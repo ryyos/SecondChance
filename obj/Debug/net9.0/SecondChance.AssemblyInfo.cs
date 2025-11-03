@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SecondChance")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8af818cedec4e2752af8d393d6ccaec84aca11f5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71d0c202b8e2c233f41056618cefbfd7d8e68c5e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SecondChance")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SecondChance")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

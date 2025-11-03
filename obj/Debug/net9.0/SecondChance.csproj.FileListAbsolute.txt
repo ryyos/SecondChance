@@ -18,3 +18,4 @@ D:\UPH\Dasar Pemrograman Dpkk\SecondChance\bin\Debug\net9.0\Serilog.dll
 D:\UPH\Dasar Pemrograman Dpkk\SecondChance\bin\Debug\net9.0\Serilog.Sinks.Console.dll
 D:\UPH\Dasar Pemrograman Dpkk\SecondChance\bin\Debug\net9.0\Serilog.Sinks.File.dll
 D:\UPH\Dasar Pemrograman Dpkk\SecondChance\obj\Debug\net9.0\SecondCh.C90C8FBE.Up2Date
+D:\UPH\Dasar Pemrograman Dpkk\SecondChance\bin\Debug\net9.0\Newtonsoft.Json.dll
