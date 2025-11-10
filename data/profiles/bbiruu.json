@@ -1,0 +1,20 @@
+{
+  "username": "bbiruu",
+  "vault": 100,
+  "currency": "Relich",
+  "level": 1,
+  "xp": 0,
+  "day": 1,
+  "stats": {
+    "total_profit": 0,
+    "successful_deals": 0,
+    "failed_negotiations": 0,
+    "items_bought": 0,
+    "items_sold": 0
+  },
+  "shop": {
+    "name": "Second Chance Store",
+    "inventory_slots": 10,
+    "inventory_used": 0
+  }
+}

@@ -1,0 +1,14 @@
+========================================
+              CONTINUE GAME
+========================================
+
+Saved Profiles Found:
+
+{profiles}
+
+Select a profile number to continue,
+[D] Delete a profile
+[N] New game
+[X] Back to main menu
+
+> _

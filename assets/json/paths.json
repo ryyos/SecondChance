@@ -1,0 +1,14 @@
+{
+  "welcome": "assets/txt/welcome.txt",
+  "firstWelcome": "assets/txt/welcome_first.txt",
+  "logs": "logs/log_.txt",
+  "newGame": "assets/txt/newGame.txt",
+  "profiles": "data/profiles",
+  "greetings_banner": "assets/txt/greetings.txt",
+  "greetings_dialog": "assets/json/greetings.json",
+  "continue": "assets/txt/continue.txt",
+  "in_game_dashboard": "assets/txt/in-game-dashboard.txt",
+  "in_game_store_banner": "assets/txt/in-game-store-banner.txt",
+  "continue_profile": "assets/txt/continue-profile.txt",
+  "continue_select": "assets/txt/continue-select.txt"
+}

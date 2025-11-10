@@ -1,0 +1,6 @@
+[{index}] {username}
+     |  Level: {level}   
+     |  Day: {day}
+     |  Vault 💎: {vault} Relich
+     |  Item: {item}
+----------------------------------------

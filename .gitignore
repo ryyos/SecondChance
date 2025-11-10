@@ -1,5 +1,5 @@
 flow/
-assets/
+# assets/
+logs/
 component/
 *test*.*
-bin/

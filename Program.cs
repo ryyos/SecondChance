@@ -6,51 +6,120 @@ using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using System.Text.Json.Nodes;
 
+
 public class Master
 {
 
-    private static string pathWelcome = "assets/txt/welcome.txt";
-    private static string pathFirstWelcome = "assets/txt/welcome_first.txt";
-    private static string pathLogs = "logs/log_.txt";
-    private static string pathNewGame = "assets/txt/newGame.txt";
-    private static string pathProfiles = "data/profiles";
-    private static string pathGreetings = "assets/txt/greetings.txt";
-    private static string pathContinue = "assets/txt/continue.txt";
 
     static Master()
     {
         Log.Logger = new LoggerConfiguration()
             .WriteTo.Console()
-            .WriteTo.File(pathLogs, rollingInterval: RollingInterval.Day)
+            .WriteTo.File("logs/logs.txt", rollingInterval: RollingInterval.Day)
             .CreateLogger();
     }
 
-    private static void generateNewProfile(string username)
+    private static JObject path = JObject.Parse(
+        File.ReadAllText("assets/json/paths.json")
+    );
+    private static string accessPath(string key)
     {
-        string data = string.Format(@"
-            {{
-                'username': '{0}',
-                'balance💎': 100,
-                'level': 1
-            }}", username);
-
-        JObject jdata = JObject.Parse(data);
-        File.WriteAllText($"{pathProfiles}/{username}.json", jdata.ToString(Newtonsoft.Json.Formatting.Indented));
+        return path[key]!.ToString();
     }
 
-    public static void continues()
+    private static void show(string any)
+    {
+        Console.WriteLine(any);
+    }
+
+    private static string input(string text, bool enter = false)
+    {
+        Console.Write(enter ? text + Environment.NewLine : text);
+        return Console.ReadLine()!;
+    }
+
+    public static void generateNewProfile(string username)
+    {
+        JObject profile = new JObject
+        {
+            {"username", username},
+            {"vault 💎", "100"},
+            {"currency", "Relich"},
+            {"level", 1},
+            {"xp", 0},
+            {"day", 1},
+            {"stats", new JObject{
+                {"total_profit", 0},
+                {"successful_deals", 0},
+                {"failed_negotiations", 0},
+                {"items_bought", 0},
+                {"items_sold", 0},
+            }},
+        {"shop", new JObject
+            {
+                {"name", "Second Chance Store"},
+                {"inventory_slots", 10},
+                {"inventory_used", 10},
+            }
+        }};
+        File.WriteAllText(
+            $"{path["profiles"]!.ToString()}/{username}.json", profile.ToString(Newtonsoft.Json.Formatting.Indented)
+        );
+    }
+
+    private static void typeEffect(JToken lines, int delay = 30)
+    {
+        foreach (var line in lines!)
+        {
+            foreach (char c in line.ToString())
+            {
+                Console.Write(c);
+                Thread.Sleep(delay);
+            }
+            Console.WriteLine();
+        }
+
+        Thread.Sleep(500);
+        input("\n\nPress enter key to continue . . .");
+    }
+
+    private static void continues()
     {
         Console.Clear();
-        show(File.ReadAllText(pathContinue));
+
+        string[] files = Directory.GetFiles(accessPath("profiles"));
+        List<string> profiles = new List<string>();
+        for (int i = 0; i < files.Length; i++)
+        {
+            // Console.WriteLine($"{i}: {files[i]}");
+            string template = File.ReadAllText(accessPath("continue_profile"));
+            JObject profile = JObject.Parse(File.ReadAllText(files[i]));
+
+            profiles.Add(
+                template
+                    .Replace("{index}", (i + 1).ToString())
+                    .Replace("{username}", profile["username"]!.ToString())
+                    .Replace("{level}", profile["level"]!.ToString())
+                    .Replace("{day}", profile["day"]!.ToString())
+                    .Replace("{vault}", profile["vault"]!.ToString())
+                    .Replace("{item}", profile["shop"]!["inventory_used"]!.ToString())
+            );
+        }
+        string template_continue = File.ReadAllText(accessPath("continue_select"));
+        template_continue = template_continue.Replace(
+            "{profiles}", string.Join("\n", profiles)
+        );
+        show(template_continue);
     }
 
     public static void newGame()
     {
         Console.Clear();
 
-        show(File.ReadAllText(pathNewGame));
+        show(File.ReadAllText(accessPath("newGame")));
         Console.Write("insert username: ");
         string username = Console.ReadLine()!;
+
         generateNewProfile(username);
         greetings(username);
     }
@@ -60,14 +129,9 @@ public class Master
         Console.WriteLine("ini dashboard");
     }
 
-    private static void show(string any)
-    {
-        Console.WriteLine(any);
-    }
-
     private static void firstGame()
     {
-        show(File.ReadAllText(pathFirstWelcome));
+        show(File.ReadAllText(accessPath("firstWelcome")));
 
         Console.Write("Select an option: ");
         bool status = int.TryParse(Console.ReadLine()!, out int chose);
@@ -99,7 +163,7 @@ public class Master
 
     private static void continueGame()
     {
-        show(File.ReadAllText(pathWelcome));
+        show(File.ReadAllText(accessPath("welcome")));
 
         Console.Write("Select an option: ");
         bool status = int.TryParse(Console.ReadLine()!, out int chose);
@@ -136,23 +200,31 @@ public class Master
     private static void greetings(string username)
     {
         Console.Clear();
-        JObject metadata = JObject.Parse(
-            File.ReadAllText($"{pathProfiles}/{username}.json")
+        JObject __greetings = JObject.Parse(
+            File.ReadAllText(
+                accessPath("greetings_dialog")
+            )
         );
 
-        string info = string.Format(@"
-username: {0}
-level: {1}
-balance💎: {2}
-        ", username, metadata["level"]!.Value<int>(), metadata["balance💎"]!.Value<int>());
+        show(File.ReadAllText(accessPath("greetings_banner")));
+        typeEffect(
+            __greetings["intro_opening"]!
+        );
 
-        show(File.ReadAllText(pathGreetings));
-        show(info);
+        Console.Clear();
+        show(File.ReadAllText(accessPath("greetings_banner")));
+        typeEffect(__greetings["intro_tutorial"]!);
+
+        Console.Clear();
+        show(File.ReadAllText(accessPath("in_game_store_banner")));
+        show(File.ReadAllText(accessPath("in_game_dashboard")));
     }
 
     public static void Main(string[] args)
     {
-        string[] profiles = Directory.GetFiles(pathProfiles);
+        Console.Clear();
+
+        string[] profiles = Directory.GetFiles(accessPath("profiles"));
         if (profiles.Length > 0)
         {
             continueGame();

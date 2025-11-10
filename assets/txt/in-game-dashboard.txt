@@ -1,0 +1,24 @@
+Owner        : {username}
+Vault 💎     : {vault} {currency}
+Reputation   : {reputation}
+Day          : {day}
+Level / XP   : {level} / {xp} XP
+
+----------------------------------------
+
+Store Status :
+  • Inventory Slots : {inventory_used} / {inventory_slots} used
+  • Total Profit    : {total_profit} {currency}
+  • Successful Deals: {successful_deals}
+  • Failed Deals    : {failed_negotiations}
+
+----------------------------------------
+
+{text_description}
+
+[1] Start the Day
+[2] View Inventory
+[3] Save & Exit
+
+----------------------------------------
+Choose an option: _

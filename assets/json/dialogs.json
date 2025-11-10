@@ -1,0 +1,104 @@
+{
+  "opening": {
+    "customer": {
+      "greeting": ["Hey there!", "Good afternoon.", "Yo, boss!"],
+      "context": [
+        "Found this old {item} in my attic.",
+        "Got this {item} from a friend who moved away.",
+        "Picked up this {item} at a flea market."
+      ],
+      "follow_up": [
+        "Still works fine — interested?",
+        "Think you’d buy it?",
+        "Any value in it?"
+      ]
+    },
+    "seller": {
+      "reaction": [
+        "Let me take a look.",
+        "Hmm, not bad.",
+        "Show me what you’ve got."
+      ],
+      "follow_up": [
+        "Seems decent. What’s your price?",
+        "Could be worth something.",
+        "How much are you hoping to get?"
+      ],
+      "emotion": [
+        "You don’t see one of these every day.",
+        "Looks like it’s been through a lot.",
+        "Could be a nice find if it’s genuine."
+      ]
+    }
+  },
+  "negotiation": {
+    "customer": {
+      "reaction": [
+        "That’s too low.",
+        "Close, but not quite there.",
+        "You’re kidding, right?"
+      ],
+      "nego": [
+        "Make it {price} and we’ve got a deal.",
+        "How about we meet halfway?",
+        "Raise it a bit and it’s yours."
+      ]
+    },
+    "seller": {
+      "nego": [
+        "Hmm… what if we settle at {price}?",
+        "I can stretch a little, but that’s my limit.",
+        "Let’s make this fair for both of us."
+      ],
+      "emotion": [
+        "You drive a hard bargain.",
+        "Alright, I’ll play along.",
+        "I like your spirit — let’s see where this goes."
+      ]
+    }
+  },
+  "accept": {
+    "customer": {
+      "accept": [
+        "Deal. Let’s wrap it up.",
+        "Alright, I’ll take it.",
+        "Fine, you’ve got yourself a deal."
+      ]
+    },
+    "seller": {
+      "accept": [
+        "Pleasure doing business with you.",
+        "Good choice. You won’t regret it.",
+        "Nice doing business — enjoy your new {item}."
+      ]
+    }
+  },
+  "reject": {
+    "customer": {
+      "reject": [
+        "Nah, not for that price.",
+        "Forget it. I’ll try somewhere else.",
+        "No way, I know what this is worth."
+      ]
+    },
+    "seller": {
+      "reject": [
+        "Your call.",
+        "Alright, maybe next time.",
+        "Suit yourself. I’ll be here if you change your mind."
+      ]
+    }
+  },
+  "misc": {
+    "goodbye": [
+      "See you around.",
+      "Come back anytime.",
+      "Hope we cross paths again."
+    ],
+    "remark": [
+      "Busy day today, huh?",
+      "Some folks really don’t know value.",
+      "You meet all kinds of people in this business."
+    ]
+  }
+}
