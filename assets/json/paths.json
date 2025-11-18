@@ -10,5 +10,6 @@
   "in_game_dashboard": "assets/txt/in-game-dashboard.txt",
   "in_game_store_banner": "assets/txt/in-game-store-banner.txt",
   "continue_profile": "assets/txt/continue-profile.txt",
-  "continue_select": "assets/txt/continue-select.txt"
+  "continue_select": "assets/txt/continue-select.txt",
+  "dashboard": "pathnya"
 }

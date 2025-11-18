@@ -16,5 +16,21 @@
     "name": "Second Chance Store",
     "inventory_slots": 10,
     "inventory_used": 0
-  }
+  },
+  "inventory": [
+    {
+      "name": "nama item",
+      "price": 1000,
+      "category": "rare",
+      "time": "waktu pembelian"
+    }
+  ],
+  "logs": [
+    {
+      "name": "nama kegiatan",
+      "time": "waktu transaksi",
+      "relich": -100,
+      "status": true
+    }
+  ]
 }
